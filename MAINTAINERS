@@ -4442,6 +4442,8 @@ M:	Daniel Ammann <daniel.ammann@bytesatwork.ch>
 S:	Maintained
 F:	.github/workflows/checkpatch.yml
 F:	Documentation/devicetree/bindings/arm/bytesatwork/bytesatwork.yaml
+F:	arch/arm/boot/dts/*bytedevkit*
+F:	arch/arm/boot/dts/*byteengine*
 F:	arch/arm/configs/fragment-901-bytedevkit.config
 F:	drivers/gpu/drm/panel/panel-youritec-ili9806e.c
 
