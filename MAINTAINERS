@@ -4442,6 +4442,7 @@ M:	Daniel Ammann <daniel.ammann@bytesatwork.ch>
 S:	Maintained
 F:	.github/workflows/checkpatch.yml
 F:	Documentation/devicetree/bindings/arm/bytesatwork/bytesatwork.yaml
+F:	drivers/gpu/drm/panel/panel-youritec-ili9806e.c
 
 C-MEDIA CMI8788 DRIVER
 M:	Clemens Ladisch <clemens@ladisch.de>
