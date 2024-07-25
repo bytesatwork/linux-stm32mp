@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ *  Copyright (C) 2022 bytes at work AG - http://www.bytesatwork.ch
+ */
+
+/dts-v1/;
+
+#include "stm32mp157c-bytedevkit.dtsi"
+
+/ {
+	model = "byteDEVKIT V1.3";
+	compatible = "batw,bytedevkit", "batw,m5", "st,stm32mp157";
+};
+
+&ethernet0 {
+	status = "okay";
+	pinctrl-0 = <&ethernet0_rmii_pins>;
+	pinctrl-names = "default";
+	phy-mode = "rmii";
+	phy-handle = <&phy0>;
+	max-speed = <100>;
+	phy-reset-gpios = <&gpioa 12 GPIO_ACTIVE_LOW>;
+
+	mdio0 {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		compatible = "snps,dwmac-mdio";
+		phy0: ethernet-phy@0 {
+			reg = <0>;
+		};
+	};
+};
