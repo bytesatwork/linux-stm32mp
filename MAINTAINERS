@@ -4444,6 +4444,7 @@ F:	.github/workflows/checkpatch.yml
 F:	.gitlab-ci.yml
 F:	Documentation/devicetree/bindings/arm/bytesatwork/bytesatwork.yaml
 F:	Documentation/devicetree/bindings/display/panel/youritech,ili9806e.yaml
+F:	drivers/gpu/drm/panel/panel-youritec-ili9806e.c
 
 C-MEDIA CMI8788 DRIVER
 M:	Clemens Ladisch <clemens@ladisch.de>
