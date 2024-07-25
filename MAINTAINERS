@@ -4437,6 +4437,11 @@ S:	Maintained
 F:	Documentation/devicetree/bindings/net/can/st,stm32-bxcan.yaml
 F:	drivers/net/can/bxcan.c
 
+BYTES AT WORK MODULES AND BOARDS
+M:	Daniel Ammann <daniel.ammann@bytesatwork.ch>
+S:	Maintained
+F:	.github/workflows/checkpatch.yml
+
 C-MEDIA CMI8788 DRIVER
 M:	Clemens Ladisch <clemens@ladisch.de>
 L:	alsa-devel@alsa-project.org (moderated for non-subscribers)
