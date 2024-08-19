@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
+%YAML 1.2
+---
+$id: http://devicetree.org/schemas/arm/bytesatwork/bytesatwork.yaml#
+$schema: http://devicetree.org/meta-schemas/core.yaml#
+
+title: bytes at work Platforms Device Tree Bindings
+
+maintainers:
+  - Daniel Ammann <daniel.ammann@bytesatwork.ch>
+
+properties:
+  $nodename:
+    const: "/"
+  compatible:
+    oneOf:
+      - description: bytes at work byteENGINE
+        items:
+          - enum:
+              - batw,m5
+          - const: batw,m5
+      - description: bytes at work byteDEVKIT
+        items:
+          - enum:
+              - batw,bytedevkit
+          - const: batw,bytedevkit
+
+additionalProperties: true
+
+...
