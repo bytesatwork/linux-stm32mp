@@ -167,18 +167,18 @@
 			no-map;
 		};
 
-		gpu_reserved: gpu-reserved@fa800000 {
-			reg = <0x0 0xfa800000 0x0 0x4000000>;
+		gpu_reserved: gpu-reserved@ba800000 {
+			reg = <0x0 0xba800000 0x0 0x4000000>;
 			no-map;
 		};
 
-		ltdc_sec_layer: ltdc-sec-layer@fe800000 {
-			reg = <0x0 0xfe800000 0x0 0x800000>;
+		ltdc_sec_layer: ltdc-sec-layer@be800000 {
+			reg = <0x0 0xbe800000 0x0 0x800000>;
 			no-map;
 		};
 
-		ltdc_sec_rotation: ltdc-sec-rotation@ff000000 {
-			reg = <0x0 0xff000000 0x0 0x1000000>;
+		ltdc_sec_rotation: ltdc-sec-rotation@bf000000 {
+			reg = <0x0 0xbf000000 0x0 0x1000000>;
 			no-map;
 		};
 
@@ -186,8 +186,8 @@
 		linux,cma {
 			compatible = "shared-dma-pool";
 			reusable;
-			alloc-ranges = <0 0x80000000 0 0x80000000>;
-			size = <0x0 0x8000000>;
+			alloc-ranges = <0 0x80000000 0 0x40000000>;
+			size = <0x0 0x4000000>;
 			alignment = <0x0 0x2000>;
 			linux,cma-default;
 		};

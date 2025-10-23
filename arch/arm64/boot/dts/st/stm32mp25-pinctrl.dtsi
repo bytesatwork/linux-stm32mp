@@ -96,8 +96,7 @@
 			st,io-clk-edge = <1>;
 		};
 		pins2 {
-			pinmux = <STM32_PINMUX('H', 9, AF10)>, /* ETH_RGMII_CLK125 */
-				 <STM32_PINMUX('C', 0, AF12)>, /* ETH_RGMII_GTX_CLK */
+			pinmux = <STM32_PINMUX('C', 0, AF12)>, /* ETH_RGMII_GTX_CLK - ETH_TX_CLK*/
 				 <STM32_PINMUX('A', 9, AF10)>, /* ETH_MDC */
 				 <STM32_PINMUX('A', 10, AF10)>; /* ETH_MDIO */
 			bias-disable;
@@ -127,7 +126,6 @@
 				 <STM32_PINMUX('H', 10, ANALOG)>, /* ETH_RGMII_TXD2 */
 				 <STM32_PINMUX('H', 11, ANALOG)>, /* ETH_RGMII_TXD3 */
 				 <STM32_PINMUX('A', 13, ANALOG)>, /* ETH_RGMII_TX_CTL */
-				 <STM32_PINMUX('H', 9, ANALOG)>, /* ETH_RGMII_CLK125 */
 				 <STM32_PINMUX('C', 0, ANALOG)>, /* ETH_RGMII_GTX_CLK */
 				 <STM32_PINMUX('A', 9, ANALOG)>, /* ETH_MDC */
 				 <STM32_PINMUX('A', 10, ANALOG)>, /* ETH_MDIO */
@@ -154,20 +152,14 @@
 			st,io-clk-edge = <1>;
 		};
 		pins2 {
-			pinmux = <STM32_PINMUX('F', 8, AF10)>, /* ETH_RGMII_CLK125 */
-				 <STM32_PINMUX('F', 7, AF10)>, /* ETH_RGMII_GTX_CLK */
-				 <STM32_PINMUX('C', 6, AF10)>; /* ETH_MDC */
+			pinmux = <STM32_PINMUX('F', 7, AF10)>, /* ETH_RGMII_GTX_CLK */
+				 <STM32_PINMUX('G', 4, AF11)>, /* ETH_MDC */
+				 <STM32_PINMUX('C', 5, AF10)>; /* ETH_MDIO */
 			bias-disable;
 			drive-push-pull;
 			slew-rate = <3>;
 		};
 		pins3 {
-			pinmux = <STM32_PINMUX('C', 5, AF10)>; /* ETH_MDIO */
-			bias-disable;
-			drive-push-pull;
-			slew-rate = <0>;
-		};
-		pins4 {
 			pinmux = <STM32_PINMUX('G', 0, AF10)>, /* ETH_RGMII_RXD0 */
 				 <STM32_PINMUX('C', 12, AF10)>, /* ETH_RGMII_RXD1 */
 				 <STM32_PINMUX('F', 9, AF10)>, /* ETH_RGMII_RXD2 */
@@ -177,7 +169,7 @@
 			st,io-retime = <1>;
 			st,io-clk-edge = <1>;
 		};
-		pins5 {
+		pins4 {
 			pinmux = <STM32_PINMUX('F', 6, AF10)>; /* ETH_RGMII_RX_CLK */
 			bias-disable;
 		};
@@ -192,7 +184,7 @@
 				 <STM32_PINMUX('C', 4, ANALOG)>, /* ETH_RGMII_TX_CTL */
 				 <STM32_PINMUX('F', 8, ANALOG)>, /* ETH_RGMII_CLK125 */
 				 <STM32_PINMUX('F', 7, ANALOG)>, /* ETH_RGMII_GTX_CLK */
-				 <STM32_PINMUX('C', 6, ANALOG)>, /* ETH_MDC */
+				 <STM32_PINMUX('G', 4, ANALOG)>, /* ETH_MDC */
 				 <STM32_PINMUX('C', 5, ANALOG)>, /* ETH_MDIO */
 				 <STM32_PINMUX('G', 0, ANALOG)>, /* ETH_RGMII_RXD0 */
 				 <STM32_PINMUX('C', 12, ANALOG)>, /* ETH_RGMII_RXD1 */
@@ -260,8 +252,6 @@
 		pins {
 			pinmux = <STM32_PINMUX('B', 5, AF9)>, /* I2C2_SCL */
 				 <STM32_PINMUX('B', 4, AF9)>; /* I2C2_SDA */
-			bias-disable;
-			drive-open-drain;
 			slew-rate = <0>;
 		};
 	};

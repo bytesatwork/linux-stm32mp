@@ -2293,13 +2293,11 @@
 				clock-names = "stmmaceth",
 					      "mac-clk-tx",
 					      "mac-clk-rx",
-					      "ptp_ref",
 					      "ethstp",
 					      "eth-ck";
 				clocks = <&rcc CK_ETH1_MAC>,
 					 <&rcc CK_ETH1_TX>,
 					 <&rcc CK_ETH1_RX>,
-					 <&rcc CK_KER_ETH1PTP>,
 					 <&rcc CK_ETH1_STP>,
 					 <&rcc CK_KER_ETH1>;
 				st,syscon = <&syscfg 0x3000 0xffffffff>;
