@@ -551,7 +551,12 @@ int stmmac_mdio_register(struct net_device *ndev)
 		memcpy(new_bus->irq, mdio_bus_data->irqs, sizeof(new_bus->irq));
 
 	new_bus->name = "stmmac";
+	static atomic_t mdio_unique_id = ATOMIC_INIT(0);
+	int uniq = atomic_inc_return(&mdio_unique_id);
 
+	snprintf(new_bus->id, MII_BUS_ID_SIZE, "%s-%d", new_bus->name, uniq);
+
+	new_bus->name = new_bus->id;
 	if (priv->plat->has_xgmac) {
 		new_bus->read = &stmmac_xgmac2_mdio_read_c22;
 		new_bus->write = &stmmac_xgmac2_mdio_write_c22;
