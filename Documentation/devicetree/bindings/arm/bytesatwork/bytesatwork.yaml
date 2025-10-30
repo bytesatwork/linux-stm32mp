@@ -4,7 +4,7 @@
 $id: http://devicetree.org/schemas/arm/bytesatwork/bytesatwork.yaml#
 $schema: http://devicetree.org/meta-schemas/core.yaml#
 
-title: bytes at work Platforms Device Tree Bindings
+title: bytesatwork Platforms Device Tree Bindings
 
 maintainers:
   - Daniel Ammann <daniel.ammann@bytesatwork.ch>
@@ -14,16 +14,27 @@ properties:
     const: "/"
   compatible:
     oneOf:
-      - description: bytes at work byteENGINE
+      - description: bytesatwork byteENGINE
         items:
           - enum:
-              - batw,m5
-          - const: batw,m5
-      - description: bytes at work byteDEVKIT
+              - bytesatwork,byteengine-am62px
+              - bytesatwork,byteengine-am62x
+              - bytesatwork,byteengine-imx8mm
+              - bytesatwork,byteengine-imx8mp
+              - bytesatwork,byteengine-imx93
+              - bytesatwork,byteengine-stm32mp1
+              - bytesatwork,byteengine-stm32mp2
+
+      - description: bytesatwork byteDEVKIT
         items:
           - enum:
-              - batw,bytedevkit
-          - const: batw,bytedevkit
+              - bytesatwork,bytedevkit-am62px
+              - bytesatwork,bytedevkit-am62x
+              - bytesatwork,bytedevkit-imx8mm
+              - bytesatwork,bytedevkit-imx8mp
+              - bytesatwork,bytedevkit-imx93
+              - bytesatwork,bytedevkit-stm32mp1
+              - bytesatwork,bytedevkit-stm32mp2
 
 additionalProperties: true
 

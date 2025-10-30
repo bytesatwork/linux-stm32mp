@@ -186,7 +186,7 @@ patternProperties:
     description: BAIKAL ELECTRONICS, JSC
   "^bananapi,.*":
     description: BIPAI KEJI LIMITED
-  "^batw,.*":
+  "^bytesatwork,.*":
     description: bytes at work AG
   "^beacon,.*":
     description: Compass Electronics Group, LLC
