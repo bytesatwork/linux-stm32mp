@@ -9,7 +9,8 @@
 
 / {
 	model = "byteDEVKIT V1.3";
-	compatible = "batw,bytedevkit", "batw,m5", "st,stm32mp157";
+	compatible = "bytesatwork,bytedevkit-stm32mp1", "bytesatwork,byteengine-stm32mp1",
+		"st,stm32mp157";
 };
 
 &ethernet0 {
