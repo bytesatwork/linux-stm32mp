@@ -15,7 +15,7 @@
 #include <dt-bindings/rtc/rtc-stm32.h>
 
 / {
-	compatible = "batw,m5", "st,stm32mp157";
+	compatible = "bytesatwork,byteengine-stm32mp1", "st,stm32mp157";
 
 	memory@c0000000 {
 		device_type = "memory";
