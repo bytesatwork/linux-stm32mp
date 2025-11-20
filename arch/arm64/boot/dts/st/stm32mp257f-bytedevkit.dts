@@ -219,7 +219,6 @@
 	pinctrl-1 = <&eth1_rgmii_sleep_pins_b>;
 	pinctrl-names = "default", "sleep";
 	phy-mode = "rgmii-id";
-	max-speed = <100>;
 	phy-handle = <&phy1_eth1>;
 	st,ext-phyclk;
 
@@ -228,16 +227,16 @@
 		#size-cells = <0>;
 		compatible = "snps,dwmac-mdio";
 		phy1_eth1: ethernet-phy@0 {
-			compatible = "ethernet-phy-id2000.a231";
+			compatible = "ethernet-phy-ieee802.3-c22";
 			reg = <0>;
 			reset-gpios = <&gpiog 12 GPIO_ACTIVE_LOW>;
 			reset-assert-us = <10000>;
 			reset-deassert-us = <80000>;
+			enet-phy-lane-no-swap;
 			ti,rx-internal-delay = <DP83867_RGMIIDCTL_2_25_NS>;
 			ti,tx-internal-delay = <DP83867_RGMIIDCTL_2_25_NS>;
-			realtek,eee-disable;
-			interrupt-parent = <&gpioh>;
-			interrupts = <3 IRQ_TYPE_LEVEL_LOW>;
+			ti,fifo-depth = <DP83867_PHYCR_FIFO_DEPTH_4_B_NIB>;
+			ti,clk-output-sel = <DP83867_CLK_O_SEL_OFF>;
 		};
 	};
 };
@@ -248,7 +247,6 @@
 	pinctrl-1 = <&eth2_rgmii_sleep_pins_a>;
 	pinctrl-names = "default", "sleep";
 	phy-mode = "rgmii-id";
-	max-speed = <100>;
 	phy-handle = <&phy1_eth2>;
 	st,ext-phyclk;
 
@@ -257,16 +255,16 @@
 		#size-cells = <0>;
 		compatible = "snps,dwmac-mdio";
 		phy1_eth2: ethernet-phy@0 {
-			compatible = "ethernet-phy-id2000.a231";
+			compatible = "ethernet-phy-ieee802.3-c22";
 			reg = <0>;
 			reset-gpios = <&gpioh 6 GPIO_ACTIVE_LOW>;
 			reset-assert-us = <10000>;
 			reset-deassert-us = <80000>;
+			enet-phy-lane-no-swap;
 			ti,rx-internal-delay = <DP83867_RGMIIDCTL_2_25_NS>;
 			ti,tx-internal-delay = <DP83867_RGMIIDCTL_2_25_NS>;
-			realtek,eee-disable;
-			interrupt-parent = <&gpioh>;
-			interrupts = <7 IRQ_TYPE_LEVEL_LOW>;
+			ti,fifo-depth = <DP83867_PHYCR_FIFO_DEPTH_4_B_NIB>;
+			ti,clk-output-sel = <DP83867_CLK_O_SEL_OFF>;
 		};
 	};
 };
