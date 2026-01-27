@@ -1,0 +1,20 @@
+stages:
+  - checkpatch
+
+variables:
+  CHECKPATCH: "scripts/checkpatch.pl"
+
+checkpatch-mr:
+  stage: checkpatch
+  rules:
+    - if: $CI_MERGE_REQUEST_IID
+      when: always
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+    - when: never
+  script:
+    - |
+      git remote set-url origin "$CI_REPOSITORY_URL" || exit 1
+      git fetch --no-tags --prune origin '+refs/heads/*:refs/remotes/origin/*' || exit 1
+      "./${CHECKPATCH}" --git ${CI_MERGE_REQUEST_TARGET_BRANCH_SHA:-$CI_MERGE_REQUEST_DIFF_BASE_SHA}..${CI_MERGE_REQUEST_SOURCE_BRANCH_SHA:-$CI_COMMIT_SHA}
+  allow_failure: false
