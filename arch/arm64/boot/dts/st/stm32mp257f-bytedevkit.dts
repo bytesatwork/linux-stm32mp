@@ -144,6 +144,16 @@
 	status = "okay";
 };
 
+&bsec {
+	ethernet_mac1_address: mac1@3dc {
+		reg = <0x3dc 0x6>;
+	};
+
+	ethernet_mac2_address: mac2@3e2 {
+		reg = <0x3e2 0x6>;
+	};
+};
+
 &combophy {
 	st,ssc-on;
 	status = "okay";
@@ -221,6 +231,8 @@
 	phy-mode = "rgmii-id";
 	phy-handle = <&phy1_eth1>;
 	st,ext-phyclk;
+	nvmem-cells = <&ethernet_mac1_address>;
+	nvmem-cell-names = "mac-address";
 
 	mdio {
 		#address-cells = <1>;
@@ -249,6 +261,8 @@
 	phy-mode = "rgmii-id";
 	phy-handle = <&phy1_eth2>;
 	st,ext-phyclk;
+	nvmem-cells = <&ethernet_mac2_address>;
+	nvmem-cell-names = "mac-address";
 
 	mdio {
 		#address-cells = <1>;
