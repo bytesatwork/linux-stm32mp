@@ -56,7 +56,7 @@
 
 	panel_lvds: panel-lvds {
 		compatible = "panel-lvds";
-		enable-gpios = <&gpioh 9 GPIO_ACTIVE_HIGH>;
+		enable-gpios = <&gpioh 9 GPIO_ACTIVE_LOW>;
 		reset-gpios = <&gpioh 8 GPIO_ACTIVE_HIGH>;
 		backlight = <&panel_lvds_backlight>;
 		status = "okay";
@@ -316,6 +316,9 @@
 
 		irq-gpios = <&gpioi 0 0>;
 		reset-gpios = <&gpioi 3 0>;
+
+		touchscreen-inverted-x;
+		touchscreen-inverted-y;
 	};
 };
 
