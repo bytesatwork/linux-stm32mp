@@ -334,7 +334,7 @@
 		reg = <0x5d>;
 		interrupt-parent = <&gpioi>;
 		interrupts = <8 0>;
-		status = "okay";
+		status = "disabled";
 
 		irq-gpios = <&gpioi 8 0>;
 		reset-gpios = <&gpioz 0 0>;
