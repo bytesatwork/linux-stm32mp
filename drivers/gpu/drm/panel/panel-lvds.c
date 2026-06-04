@@ -267,6 +267,15 @@ static int panel_lvds_probe(struct platform_device *pdev)
 	drm_panel_add(&lvds->panel);
 
 	dev_set_drvdata(lvds->dev, lvds);
+
+	/* Reset the display */
+	if (lvds->reset_gpio) {
+		gpiod_set_value_cansleep(lvds->reset_gpio, 0);
+		msleep(20);
+		gpiod_set_value_cansleep(lvds->reset_gpio, 1);
+		msleep(100);
+	}
+
 	return 0;
 }
 
