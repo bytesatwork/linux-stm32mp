@@ -4445,6 +4445,7 @@ F:	.gitlab-ci.yml
 F:	Documentation/devicetree/bindings/arm/bytesatwork/bytesatwork.yaml
 F:	Documentation/devicetree/bindings/display/panel/youritech,ili9806e.yaml
 F:	arch/arm64/boot/dts/st/stm32mp253f-bytedevkit.dts
+F:	arch/arm64/boot/dts/st/stm32mp257f-bytedevkit-v2.dts
 F:	arch/arm64/boot/dts/st/stm32mp257f-bytedevkit.dts
 F:	arch/arm64/configs/bytedevkit_stm32mp2_defconfig
 F:	arch/arm/boot/dts/*bytedevkit*
