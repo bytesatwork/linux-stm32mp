@@ -772,7 +772,7 @@ static int lvds_pixel_clk_register(struct stm_lvds *lvds)
 
 	/* Check the pixel clock rate (null value forbidden) */
 	if (!lvds->pixel_clock_rate)
-		lvds->pixel_clock_rate = 148500000;
+		lvds->pixel_clock_rate = 25000000;
 
 	ret = clk_hw_register(lvds->dev, &lvds->lvds_ck_px);
 	if (ret)
