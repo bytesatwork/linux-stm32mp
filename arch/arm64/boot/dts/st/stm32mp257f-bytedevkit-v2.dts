@@ -127,6 +127,26 @@
 			pinmux = <STM32_PINMUX('H', 5, AF12)>;
 		};
 	};
+
+	pcie_pins_a: pcie-0 {
+		pins {
+			pinmux = <STM32_PINMUX('B', 8, AF4)>;
+			bias-disable;
+		};
+	};
+
+	pcie_init_pins_a: pcie-init-0 {
+		pins {
+			pinmux = <STM32_PINMUX('B', 8, GPIO)>;
+			output-low;
+		};
+	};
+
+	pcie_sleep_pins_a: pcie-sleep-0 {
+		pins {
+			pinmux = <STM32_PINMUX('B', 8, ANALOG)>;
+		};
+	};
 };
 
 &a35ss_syscfg {
@@ -594,3 +614,12 @@
 	};
 };
 
+&pcie_rc {
+	status = "okay";
+	pinctrl-names = "default", "init", "sleep";
+	pinctrl-0 = <&pcie_pins_a>;
+	pinctrl-1 = <&pcie_init_pins_a>;
+	pinctrl-2 = <&pcie_sleep_pins_a>;
+	wake-gpios = <&gpioz 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	wakeup-source;
+};
