@@ -91,6 +91,19 @@
 		default-brightness-level = <1>;
 		status = "okay";
 	};
+
+	leds {
+		compatible = "gpio-leds";
+		red {
+			gpios = <&gpio_expander 2 GPIO_ACTIVE_LOW>;
+		};
+		green {
+			gpios = <&gpio_expander 3 GPIO_ACTIVE_LOW>;
+		};
+		blue {
+			gpios = <&gpio_expander 4 GPIO_ACTIVE_LOW>;
+		};
+	};
 };
 
 &pinctrl {
@@ -345,6 +358,13 @@
 
 		touchscreen-inverted-x;
 		touchscreen-inverted-y;
+	};
+
+	gpio_expander: gpio@71 {
+		compatible = "ti,tca9538";
+		reg = <0x71>;
+		gpio-controller;
+		#gpio-cells = <2>;
 	};
 };
 
